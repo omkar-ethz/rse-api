@@ -13,7 +13,7 @@ app.add_middleware(
 )
 
 
-# --- Models (These generate the OpenAPI schema) ---
+# Models
 class QuestionCreate(BaseModel):
     text: str
 
@@ -24,12 +24,12 @@ class Question(BaseModel):
     upvotes: int = 0
 
 
-# --- In-Memory Database ---
+# In-Memory DB, just a Python list
 db: list[Question] = []
 current_id = 1
 
 
-# --- Endpoints ---
+# Endpoints
 @app.get("/questions")
 async def get_questions() -> list[Question]:
     """Fetch all questions, sorted by upvotes."""
