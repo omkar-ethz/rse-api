@@ -17,6 +17,15 @@ var questions = []Question{
 }
 
 func getQuestions(w http.ResponseWriter, req *http.Request) {
+	// As it's a public API, allow cross origin requests
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "*")
+
+	if req.Method == http.MethodOptions {
+		return
+	}
+
 	if req.Method == http.MethodGet {
 		q, err := json.Marshal(questions)
 		if err != nil {
