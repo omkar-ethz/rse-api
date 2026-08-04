@@ -1,7 +1,7 @@
 # rse-api
 Code for the RSE talk at PSI
 
-Presentation for the talk: [link](./RSE%20talk.pdf).
+Presentation slides: [link](./RSE%20talk.pdf).
 
 ## Installing and running the FastAPI server
 1. Install [uv](https://docs.astral.sh/uv/getting-started/installation/) - a modern package manager for Python. `uv` manages virtual environments, python installations, and dependencies, effectively replacing `pip` and `venv`.
